@@ -1,0 +1,45 @@
+CXX=g++
+INCLUDES=
+FLAGS=-D__MACOSX_CORE__ -c
+LIBS=-framework CoreAudio -framework CoreMIDI -framework CoreFoundation -lstdc++ \
+						-framework OpenGL -framework GLUT \
+						-framework IOKit -framework AppKit -framework Foundation
+
+OBJS=   RtAudio.o ChannelBuffersHandler.o AutocorrHandler.o WindowedFftHandler.o FftBase.o LineDisplayHandler2D.o \
+						SpectrumDisplay.o AutocorrDisplay.o WaveformDisplay.o TimeframeVisualizer.o
+
+TimeframeVisualizer: $(OBJS) 
+	$(CXX) -o TimeframeVisualizer $(OBJS) $(LIBS)
+	
+TimeframeVisualizer.o: TimeframeVisualizer.cpp defs.h RtAudio.h ChannelBuffersHandler.h WindowedFftHandler.h AutocorrHandler.h FftBase.h LineDisplayHandler2D.h SpectrumDisplay.h AutocorrDisplay.h WaveformDisplay.h
+	$(CXX) $(FLAGS) TimeframeVisualizer.cpp
+	
+ChannelBuffersHandler.o: ChannelBuffersHandler.h ChannelBuffersHandler.cpp
+	$(CXX) $(FLAGS) ChannelBuffersHandler.cpp
+	
+SpectrumDisplay.o: SpectrumDisplay.h LineDisplayHandler2D.h WindowedFftHandler.h FftBase.h SpectrumDisplay.cpp
+	$(CXX) $(FLAGS) SpectrumDisplay.cpp
+	
+AutocorrDisplay.o: AutocorrDisplay.h LineDisplayHandler2D.h AutocorrHandler.h FftBase.h AutocorrDisplay.cpp
+	$(CXX) $(FLAGS) AutocorrDisplay.cpp
+	
+WaveformDisplay.o: WaveformDisplay.h LineDisplayHandler2D.h WaveformDisplay.cpp
+	$(CXX) $(FLAGS) WaveformDisplay.cpp
+
+LineDisplayHandler2D.o: LineDisplayHandler2D.h LineDisplayHandler2D.cpp
+	$(CXX) $(FLAGS) LineDisplayHandler2D.cpp	
+
+WindowedFftHandler.o: WindowedFftHandler.h FftBase.h WindowedFftHandler.cpp
+	$(CXX) $(FLAGS) WindowedFftHandler.cpp
+	
+AutocorrHandler.o: AutocorrHandler.h FftBase.h AutocorrHandler.cpp
+	$(CXX) $(FLAGS) AutocorrHandler.cpp
+	
+FftBase.o: FftBase.h FftBase.cpp
+	$(CXX) $(FLAGS) FftBase.cpp
+
+RtAudio.o: RtAudio.h RtAudio.cpp RtError.h
+	$(CXX) $(FLAGS) RtAudio.cpp
+	
+clean:
+	rm -f *~ *# *.o TimeframeVisualizer
