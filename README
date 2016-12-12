@@ -1,0 +1,24 @@
+README for the AUDIO_SPI applications
+=====================================
+
+AUDIO_SPI is a set of open source audio applications targeted for the 
+Windows Operating System. This application is part of the AUDIO_SPI
+software collection.
+
+AUDIO_SPI's applications are based on popular open source libraries
+and should therefore be fairly easy to port to various platforms.
+
+AUDIO_SPI  project was started in Montreal in 2010 by Stephane Poirier
+with the objective of experimenting with audio to understand the process of
+creating music with software applications.
+
+Some AUDIO_SPI applications are used by Carl Poirier who is a Montreal
+music composer prototyping an audio operating system called XAOS. The
+packaging of the AUDIO_SPI applications sometimes reflects the XAOS
+requirements.
+
+Links:
+======
+
+The AUDIO_SPI web site  . . . . . http://www.oifii.org/ns-org/nsd/ar/cp/audio_spi/
+Support . . . . . . . . . . https://groups.google.com/forum/#!forum/audio_spi-users

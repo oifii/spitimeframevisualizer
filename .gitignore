@@ -1,0 +1,26 @@
+#ignore wav files
+*.wav
+*.w64
+
+#ignore object files
+*.obj
+*.o
+
+#ignore some visual studio files
+*.pch
+ipch/
+*.sbr
+*.sdf
+*.res
+*.ilk
+*.lastbuildstate
+*.manifest
+*.pdb
+*.log
+*.tlog
+*.idb
+*.ncb
+*.aps
+*.opendb
+*.opensdf
+*.cachefile

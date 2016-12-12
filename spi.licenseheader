@@ -1,3 +1,5 @@
+﻿extensions: designer.cs generated.cs
+extensions: .cs .cpp .h .c
 /*
  * Copyright (c) 2010-2016 Stephane Poirier
  *
@@ -21,6 +23,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-#define SAMPLE double
-#define MY_PI 3.14159265358979
-#define SRATE 44100
+extensions: .aspx .ascx
+<%-- 
+Sample license text.
+--%>
+extensions: .vb
+'Sample license text.
+extensions:  .xml .config .xsd
+<!--
+Sample license text.
+-->
